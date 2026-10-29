@@ -21,6 +21,15 @@
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
   --sale-pulse: 0 0 20px rgba(239, 68, 68, 0.5);
+
+  --text: #1f2937;
+  --bg: #fdf2f8;
+  --card: #ffffff;
+  --nav-bg-solid: rgba(255, 255, 255, 0.97);
+  --track: #f3e8ff;
+
+
+
 }
 
 /* NOTE: overflow-x: clip (not hidden) so the sticky navbar keeps working */
@@ -2194,4 +2203,121 @@ html.modal-open {
   .order-form {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+
+
+
+
+
+/* =========================
+   Dark / Light Theme
+========================= */
+
+:root[data-theme="light"] {
+  --text: #1f2937;
+  --bg: #fdf2f8;
+  --card: #ffffff;
+  --nav-bg-solid: rgba(255, 255, 255, 0.97);
+  --track: #f3e8ff;
+  --gradient-light: linear-gradient(
+    135deg,
+    #fce7f3 0%,
+    #f3e8ff 50%,
+    #fef3c7 100%
+  );
+}
+
+:root[data-theme="dark"] {
+  --text: #f9fafb;
+  --dark: #f9fafb;
+  --light: #111827;
+  --bg: #111827;
+  --card: #1f2937;
+  --nav-bg-solid: rgba(17, 24, 39, 0.98);
+  --track: #374151;
+  --gradient-light: linear-gradient(
+    135deg,
+    #111827 0%,
+    #1f2937 50%,
+    #312e40 100%
+  );
+}
+
+body {
+  background: var(--gradient-light);
+  color: var(--text);
+}
+
+.animated-bg {
+  background: var(--gradient-light);
+}
+
+.navbar,
+.navbar.scrolled {
+  background: var(--nav-bg-solid);
+  color: var(--text);
+}
+
+.nav-links li a {
+  color: var(--text);
+}
+
+.product-card,
+.collection-card,
+.featured-collection,
+.mega-deal,
+.countdown-item,
+.filter-tab,
+.sale-category,
+.about-card {
+  background-color: var(--card);
+  color: var(--text);
+}
+
+.hero-subtitle,
+.collections-subtitle,
+.sale-subtitle,
+.featured-desc,
+.mega-desc,
+.product-stats,
+.original-price,
+.stat-label {
+  color: var(--text);
+}
+
+.about-item {
+  background: var(--gradient-light);
+}
+
+.modal-dialog,
+.field input,
+.field select,
+.field textarea {
+  background: var(--card);
+  color: var(--text);
+}
+
+
+
+/* ===== Fixed Footer Color in Both Themes ===== */
+
+.footer {
+  background: #180d26 !important;
+  color: #f5e9ff !important;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer p,
+.footer a,
+.footer span,
+.footer i {
+  color: #f5e9ff;
+}
+
+.footer a:hover {
+  color: #f472b6;
 }
